@@ -4,9 +4,14 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const programmer = [" Jahin", " Lezy", " Kiran", " voran"];
-  const friends = [{ name: " rana", age: 27 }, { name: " jahid", age: 23 }, { name: " karim", age: 29 }]
+  // let friends = [{ name: " rana", age: 27 }, { name: " jahid", age: 23 }, { name: " karim", age: 29 }]
 
-
+  const [friends, setFriends] = useState([])
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res => res.json())
+      .then(data => setFriends(data))
+  }, [])
 
   return (
     <div className="App">
