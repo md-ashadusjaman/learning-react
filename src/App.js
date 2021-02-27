@@ -1,10 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const programmer = [" Jahin", " Lezy", " Kiran", " voran"];
   const friends = [{ name: " rana", age: 27 }, { name: " jahid", age: 23 }, { name: " karim", age: 29 }]
+
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -26,8 +29,9 @@ function App() {
         </a> */}
 
         {
-          friends.map(frnd => <Nayok Name={frnd.name}></Nayok>)
+          friends.map(frnd => <Nayok Name={frnd.name} key={frnd.id}></Nayok>)
         }
+
 
       </header>
     </div>
@@ -39,6 +43,8 @@ function ProjectDone(props) {
   )
 
 }
+
+
 
 function ProjectCounter() {
   // useState(0);
